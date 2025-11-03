@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@use './vars.scss' as *;
+
+body{
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $background-color;
+    color: $text-color;
+}
+html, body {
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+    font-stretch: normal;
+    font-size: 1rem;
+    color: $text-color;
+    line-height: 1.5rem;
+    letter-spacing: 0.42px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, span {
+    margin: 0;
+    padding: 0;
+}
