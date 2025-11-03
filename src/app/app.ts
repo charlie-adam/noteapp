@@ -2,6 +2,12 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuBar } from "./components/menu-bar/menu-bar";
 import { SideBar } from "./components/side-bar/side-bar";
+import { gsap } from "gsap";
+    
+import { Draggable } from "gsap/Draggable";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { TextPlugin } from "gsap/TextPlugin";
 
 @Component({
   selector: 'app-root',
@@ -11,4 +17,7 @@ import { SideBar } from "./components/side-bar/side-bar";
 })
 export class App {
   protected readonly title = signal('noteapp');
+  constructor() {
+    gsap.registerPlugin(Draggable,ScrollTrigger,ScrollSmoother,TextPlugin);
+  }
 }

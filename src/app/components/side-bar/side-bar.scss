@@ -1,0 +1,51 @@
+@use '../../../vars' as *;
+.sidebar{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    background-color: $background-color-light;
+    justify-content: space-between;
+    border-right: 1px solid $border-color;
+    transition: width $transition;
+    .item{
+        width:100%;
+        height: 50px;
+        display:flex;
+        padding: 0 15px;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        transition: color $transition, background-color $transition;
+        span{
+            font-size: 0.8rem;
+            color: $text-color-dimmed;
+            transition: color $transition;
+        }
+        i{
+            color: $text-color-dimmed;
+            font-size: 1.2rem;
+            transition: color $transition;
+        }
+        &.active, &:hover{
+            background-color: $background-color-accent;
+            cursor: pointer;
+            i, span{
+                color: $primary-color;
+            }
+        }
+
+        &.no-border{
+            border-bottom: none;
+        }
+    }
+
+    &.expanded{
+        width: 140px;
+        .item{
+            padding: 0 15px;
+            i{
+                margin-right: 10px;
+            }
+        }
+    }
+}

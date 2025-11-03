@@ -10,10 +10,11 @@
         width: 50px;
         max-width:250px;
         height:100%;
-        border-right: 1px solid $border-color;
+        z-index:20;
     }
     .right{
         flex:1;
         height:100%;
+        z-index:10;
     }
 }

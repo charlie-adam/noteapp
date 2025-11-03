@@ -1,0 +1,18 @@
+<div class="sidebar" [class.expanded]="isExpanded" #sidebar>
+    <div class="items-top">
+    @for (item of sidebarItems; track item) {
+        <div class="item" routerLinkActive="active" routerLink="{{ item.routerLink}}">
+            <i class="bi bi-{{ item.icon }}"></i>
+            @if (isExpanded) {
+                <span>{{ item.label }}</span>
+            }
+        </div>
+    }
+    </div>
+    <div class="items-bottom">
+        <div class="item no-border" (click)="toggleSidebar()">
+            <i class="bi bi-{{ isExpanded ? 'arrow-left' : 'arrow-right' }}"></i>
+            <!-- <span>{{ isExpanded ? 'Collapse' : 'Expand' }}</span> -->
+        </div>
+    </div>
+</div>
