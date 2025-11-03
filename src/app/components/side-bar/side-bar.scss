@@ -27,7 +27,7 @@
             transition: color $transition;
         }
         &.active, &:hover{
-            background-color: $background-color-accent;
+            background-color: $background-color-lightest;
             cursor: pointer;
             i, span{
                 color: $primary-color;

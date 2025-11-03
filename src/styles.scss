@@ -17,11 +17,67 @@ html, body {
     font-size: 1rem;
     color: $text-color;
     line-height: 1.5rem;
-    letter-spacing: 0.42px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p, div, span {
     margin: 0;
     padding: 0;
+}
+
+.btn{
+    background-color: $background-color-lighter;
+    border: none;
+    border-radius: $border-radius;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    transition: background-color $transition;
+    i{
+        color: $text-color-dimmed;
+        transition: color $transition;
+        font-size: 0.9rem;
+    }
+
+    &:hover {
+        i{
+            color: $text-color;
+        }
+        background-color: $background-color-lightest;
+        border-color: $border-color-light;
+    }
+
+    &.btn-clear{
+        background-color: transparent !important;
+        border: none !important;
+        i{
+            color: $text-color-dimmed;
+        }
+        &:hover {
+            background-color: transparent !important;
+            i{
+                color: $text-color;
+            }
+        }
+    }
+
+    &.btn-delete{
+        background-color: $delete-background-color;
+        border-color: $delete-border-color;
+        i{
+            color: $delete-color;
+        }
+
+        &:hover {
+            i{
+                color: $delete-color-light;
+            }
+            background-color: $delete-background-color-light;
+            border-color: $delete-border-color-light;
+    }
+    }
 }

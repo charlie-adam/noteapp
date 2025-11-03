@@ -1,0 +1,14 @@
+
+
+<div class="note-wrapper" [style.left.px]="note.x" [style.top.px]="note.y"
+(mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #noteWrapper>
+    <div class="note-controls" [class.show]="showControls" #noteControls>
+        <button class="btn btn-clear" (click)="$event.stopPropagation(); editNote()">
+            <i class="bi bi-arrow-up-right"></i>
+        </button>
+        <button class="btn btn-clear btn-delete" (click)="$event.stopPropagation(); deleteNote()">
+            <i class="bi bi-trash"></i>
+        </button>
+    </div>
+    <div class="note"></div>
+</div>

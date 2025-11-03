@@ -1,1 +1,5 @@
-<div class="note-area"></div>
+<div class="note-area" (dblclick)="createNote($event)">
+    @for (note of notes; track note.id) {
+        <app-note-card [note]="note" (delete)="deleteNote($event)" (edit)="editNote($event)"></app-note-card>
+    }
+</div>
