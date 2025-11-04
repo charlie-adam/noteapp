@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Note } from '../../models/models';
+import { Draggable } from '../../directives/draggable';
 
 @Component({
   selector: 'app-note-card',
-  imports: [],
+  imports: [Draggable],
   templateUrl: './note-card.html',
   styleUrl: './note-card.scss',
 })
@@ -26,6 +27,11 @@ export class NoteCard implements OnInit {
 
   onMouseEnter() {
     this.showControls = true;
+  }
+
+  onDragged(position: { left: number; top: number }) {
+    this.note.x = position.left;
+    this.note.y = position.top;
   }
 
   editNote() {
